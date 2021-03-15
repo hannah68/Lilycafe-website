@@ -1,0 +1,23 @@
+@mixin btn {
+    background-color: $bg-color-btn-primary;
+    color: $color-btn-primary;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+    padding: 2rem;
+}
+
+@mixin imgWidth {
+    width: 45rem;
+    height: auto;
+
+    @media only screen and (max-width: 990px){
+        width: 35rem;
+    }
+}
+
+@mixin nameStyle {
+    color: $color-navbar;
+    font-size: $font-size-btn;
+    font-weight: 700;
+    text-align: center;
+}

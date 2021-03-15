@@ -1,0 +1,39 @@
+.heading-primary{
+    font-size: $font-size-default;
+    padding: 5rem;
+    text-align: center;
+    margin:0 20rem;
+
+    @media only screen and (max-width: 1057px) {
+        margin: 0 10rem; 
+    }
+
+    @media only screen and (max-width: 897px) {
+        margin: 0 5rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+        font-size: 2rem;
+        padding: 3rem;
+    }
+
+    @media only screen and (max-width: 570px) {
+        margin: 0 1rem;
+    }
+
+    &--main{
+        font-family: $font-family-title;
+        font-size:$font-size-title;
+    }
+
+    &--sub{
+       word-spacing: 2px;
+    }
+
+    &--text{
+        @media only screen and (max-width: 360px) {
+            display: none;
+        }
+    }
+}
+

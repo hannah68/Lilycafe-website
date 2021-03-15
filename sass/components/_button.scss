@@ -1,0 +1,71 @@
+.btn{
+    &,
+	&:link,
+	&:visited {
+        background-color:$color-btn-secondary;
+        color:$bg-color-btn-secondary;
+        font-family: $font-family-default;
+        font-size: $font-size-btn;
+        font-weight: 400;
+        padding: 2rem;
+        margin-top: 2rem;
+        border-radius: 3rem;
+        border: none;
+        cursor: pointer;
+
+        position: relative;
+        transition: all .2s;
+
+        @media only screen and (max-width: 1254px) {
+            font-size: 1.5rem;
+            padding: 1rem;
+        } 
+    }
+
+    &:hover{
+        transform: translateY(3px);
+        box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+    }
+
+    &:active,
+    &:focus{
+    outline: none;
+    transform: translateY(-1px);
+    }
+
+    &--center{
+        @include btn;
+        margin-top: 2rem;
+        text-decoration: none;
+    }
+
+    &--header{
+        @include btn;
+        text-decoration: none;
+        position: absolute;
+        top: 52rem;
+        right: 5rem;
+    }
+
+
+    &--blue{
+        width: 14.5rem;
+        text-decoration: none;
+
+        @media only screen and (max-width: 1254px) {
+            width: 10rem;
+        }
+        @media only screen and (max-width: 750px){
+            width: 8rem;
+        }
+        
+        
+       &:hover{
+           background-color: #f7c7bb;
+           color:  #0000CC;
+       }
+    }
+}
+
+
+

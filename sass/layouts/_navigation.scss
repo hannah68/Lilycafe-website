@@ -1,0 +1,176 @@
+
+.navigation{
+    background-color:$bg-color-navbar;
+    font-family: $font-family-header;
+    font-size: $font-size-navbar;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 10rem;
+
+    //STICKY NAVBAR
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: .6s;
+    z-index: 10000;
+
+    
+    &__logo-box{
+        padding: 2rem 2rem;
+
+        @media only screen and (max-width: 750px) {
+            display: none;
+        }
+    }
+
+    &__logo{
+        height: 7rem;
+    }
+
+    &__nav{
+        position: absolute;
+        top:.5rem;
+        right: 0;
+        padding: 1rem 3rem 1rem 0;
+    }
+
+    &__list{
+        display: flex;
+    }
+
+    &__item{
+        list-style: none;
+    }
+
+    &__link{
+        &:link,
+        &:visited{
+            color: $color-navbar;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 2rem;
+            text-transform: uppercase;
+            display: block;
+            transition: .5s;
+        }
+
+        &:hover,
+        &:active {
+            color:  #ffd11a;
+        }
+    }
+
+    &__icon{
+        visibility: hidden;
+    }
+
+    &__checkbox{
+        display: none;
+    }
+}
+
+// JS CLASS ======================================
+.navigation.sticky{
+    background-color: rgba(83, 49, 29, 0.8);
+    height: 8rem;
+}
+
+.navigation.sticky .navigation__nav{
+    padding:0;
+}
+
+.navigation.sticky .navigation__logo-box{
+    visibility: hidden;
+    padding: 0;
+}
+// ==========================================
+
+
+//Media Query navigation styling============
+@media only screen and (max-width: 750px){
+    
+    .navigation{
+        position: relative;
+        background-color: transparent;
+        height: 0;
+    }
+
+    .navigation__button{
+        height: 3rem; 
+		width: 3rem;
+        position: fixed;
+		top: 3.5rem;
+        right: 2.3rem;
+        z-index: 2000;
+    }
+    
+    .navigation__background{
+        height: 5rem;
+        width: 5rem;
+        border-radius: 50%;
+		position: fixed;
+		top: 2.5rem;
+		right: 1.5rem;
+        background-color: $bg-color-btn-secondary;
+        z-index: 1000;
+        transition: transform .8s;
+    }
+
+    .navigation__nav{
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1500;
+
+        opacity: 0;
+        width: 0;
+        transition: all .8s;
+    }
+
+	.navigation__list {
+        position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+        width: 100%;
+        display: inline-block;
+    }
+    
+    .navigation__link{
+        &:link,
+        &:visited{
+            display: inline-block;
+            font-size: 3rem;
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #F5C4B7 50%);
+		    background-size: 270%;
+            transition: all .4s;
+            color: $color-btn-secondary;
+            padding: 1rem;
+        }
+
+        &:hover,
+        &:active{
+            background-position: 100%;
+            transform: translateX(1rem);
+        }
+    }
+	
+	.navigation__checkbox:checked ~ .navigation__background {
+		transform: scale(80);
+    }
+    
+    .navigation__checkbox:checked ~ .navigation__nav {
+		opacity: 1;
+		width: 100%;
+    }
+    
+    .navigation__icon i{
+        visibility: visible;
+        text-align: center;
+        color: $color-btn-secondary;
+        font-size: 2.6rem;
+    }
+}
